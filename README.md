@@ -7,7 +7,9 @@ Página única, estática. Sem build, sem dependências: abra `index.html` ou si
 - `index.html` — a página (marca, manifesto, e-mail)
 - `style.css` — estilos e fontes
 - `fonts/` — fontes auto-hospedadas (Pinyon Script, Italiana, Fraunces, DM Sans; licença SIL OFL em `LICENSE-*.txt`)
-- `img/fundo.jpg`, `img/fundo-mobile.jpg` — imagem de fundo (desktop e celular)
+- `video/fundo.mp4`, `video/fundo-mobile.mp4` — vídeo de fundo em loop (desktop e celular)
+- `video.js` — só inicia o vídeo se a conexão aguentar
+- `img/fundo.jpg`, `img/fundo-mobile.jpg` — quadro do vídeo, usado como foto de fundo em conexões lentas (desktop e celular)
 - `img/og.jpg` — imagem de compartilhamento (WhatsApp, Instagram, etc.)
 - `img/icon.svg` — favicon
 

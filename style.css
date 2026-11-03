@@ -23,6 +23,9 @@ html { background: var(--verde-negro); color-scheme: dark; }
 body { color: var(--creme-papel); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 
 .page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 100dvh;
   box-sizing: border-box;
   padding: clamp(40px, 8vh, 96px) clamp(24px, 6vw, 96px);
@@ -34,6 +37,30 @@ body { color: var(--creme-papel); font-family: var(--font-sans); -webkit-font-sm
 }
 @media (min-width: 700px) {
   .page { background-image: url(img/fundo.jpg); }
+}
+
+/* Vídeo de fundo: cobre a foto só depois de começar a tocar (ver video.js) */
+.fundo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  pointer-events: none;
+}
+.fundo.is-on { opacity: 1; }
+
+/* Véu sobre o fundo: mantém o texto legível sobre o vestido claro */
+.page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(14, 23, 18, 0.12), rgba(14, 23, 18, 0.45) 45%);
+  pointer-events: none;
 }
 
 /* Marca */
