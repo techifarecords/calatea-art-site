@@ -31,6 +31,11 @@
     timer = setTimeout(desistir, ESPERA);
   }
 
+  function baixado() {
+    var b = video.buffered;
+    return b.length > 0 && b.end(b.length - 1) >= video.duration - 0.5;
+  }
+
   function iniciar() {
     // Só aparece quando o navegador estima que dá para tocar sem travar
     video.addEventListener('canplaythrough', function () {
@@ -43,6 +48,8 @@
       if (visivel) clearTimeout(timer);
     });
     video.addEventListener('waiting', function () {
+      // Com o arquivo todo baixado, a espera é só a volta do loop, não a conexão
+      if (baixado()) return;
       travadas++;
       if (travadas > MAX_TRAVADAS) desistir();
       else if (visivel) aguardar();
