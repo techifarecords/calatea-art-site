@@ -4,8 +4,8 @@
   command = ""
 
 # ---------------------------------------------------------------
-# Media kits dos artistas (repo privado techifarecords/calatea-art-mediakit,
-# site Netlify "calatea-mediakit"). Proxy transparente: a URL continua calatea.art/<Artista>/.
+# Media kits dos artistas (um repo privado por artista; Dhara: techifarecords/DharaGuimaraes,
+# site Netlify "calatea-dharaguimaraes"). Proxy transparente: a URL continua calatea.art/<Artista>/.
 # Novo artista = duplicar os dois blocos trocando o nome.
 # ---------------------------------------------------------------
 
@@ -14,12 +14,12 @@
 #  caminhos absolutos e canonical com barra, então as duas formas funcionam)
 [[redirects]]
   from = "/DharaGuimaraes"
-  to = "https://calatea-mediakit.netlify.app/DharaGuimaraes/"
+  to = "https://calatea-dharaguimaraes.netlify.app/DharaGuimaraes/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/DharaGuimaraes/*"
-  to = "https://calatea-mediakit.netlify.app/DharaGuimaraes/:splat"
+  to = "https://calatea-dharaguimaraes.netlify.app/DharaGuimaraes/:splat"
   status = 200
   force = true
