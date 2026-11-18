@@ -1,0 +1,25 @@
+# Landing calatea.art — site estático, sem build.
+[build]
+  publish = "."
+  command = ""
+
+# ---------------------------------------------------------------
+# Media kits dos artistas (repo privado techifarecords/calatea-art-mediakit,
+# site Netlify "calatea-mediakit"). Proxy transparente: a URL continua calatea.art/<Artista>/.
+# Novo artista = duplicar os dois blocos trocando o nome.
+# ---------------------------------------------------------------
+
+# Dhara Guimarães
+# (o Netlify trata /DharaGuimaraes e /DharaGuimaraes/ como iguais; as páginas usam
+#  caminhos absolutos e canonical com barra, então as duas formas funcionam)
+[[redirects]]
+  from = "/DharaGuimaraes"
+  to = "https://calatea-mediakit.netlify.app/DharaGuimaraes/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/DharaGuimaraes/*"
+  to = "https://calatea-mediakit.netlify.app/DharaGuimaraes/:splat"
+  status = 200
+  force = true
